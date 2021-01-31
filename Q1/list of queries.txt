@@ -1,0 +1,129 @@
+--Query to fetch all albums--
+query{
+  albums{
+   data{
+      id
+      title
+      photos{
+        data{
+          id
+          title
+          url
+          thumbnailUrl
+        }
+      }
+    }
+    links{
+      first{
+        page
+        limit
+      }
+      prev{
+        page
+        limit
+      }
+      next{
+        page
+        limit
+      }
+      last{
+        page
+        limit
+      }
+    }
+    meta{
+      totalCount
+    }
+  }
+}
+
+--Query to get all posts--
+query{
+   posts{
+    data{
+      id
+      title
+      body
+      user{
+        id
+        name
+        username
+        email
+      }
+      comments{
+        data{
+          id
+          name
+          email
+          body
+        }
+      }
+    }
+    links{
+      first{
+        page
+        limit
+      }
+      prev{
+        page
+        limit
+      }
+      next{
+        page
+        limit
+      }
+      last{
+        page
+        limit
+      }
+    }
+    meta{
+      totalCount
+    }
+    
+  }
+}
+
+--Query one post--
+query{
+  post(id:8){
+    id
+    title
+    body
+    user{
+      id
+      name
+      username
+      email
+    }
+    comments{
+      	data{
+          id
+          name
+          email
+        }
+        links{
+        first{
+          page
+          limit
+        }
+        prev{
+          page
+          limit
+        }
+        next{
+          page
+          limit
+        }
+        last{
+          page
+          limit
+        }
+      }
+      meta{
+        totalCount
+      }
+    }
+  }
+}
+
